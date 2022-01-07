@@ -159,7 +159,7 @@ module WebVTT
       # it's a note, ignore
       return if lines[0] =~ /NOTE/
 
-      if !lines[0].include?("-->")
+      if (!lines[0].include?("-->") rescue false)
         @identifier = lines[0]
         lines.shift
       end
